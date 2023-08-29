@@ -23,8 +23,8 @@ export async function generateEndpoints(
     return generateApi(schemaAbsPath, options);
   });
   const outputFile = options.outputFile;
+  console.log("outputFile:", outputFile);
   if (outputFile) {
-    console.log("outputFile:", outputFile);
     fs.writeFileSync(
       path.resolve(process.cwd(), outputFile),
       await prettify(outputFile, sourceCode)
